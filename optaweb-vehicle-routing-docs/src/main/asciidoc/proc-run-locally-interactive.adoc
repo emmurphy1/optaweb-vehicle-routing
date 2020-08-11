@@ -1,0 +1,43 @@
+[id='proc-run-locally-interactive_{context}']
+= Run the OptaWeb Vehicle Routing runLocally.sh script in interactive mode
+
+Use interactive mode to see the list of downloaded OSM files and country codes assigned to each region.
+You can use the interactive mode to download additional OSM files from Geofabrik without visiting the website and choosing a destination for the download.
+
+.Prerequisites
+* `optaweb-vehicle-routing` repository is cloned on your computer.
+* Internet access is available.
+* Java 8 or higher is installed.
+
+.Procedure
+. Change directory to the `optaweb-vehicle-routing-distribution-{VRPVERSIONLONG}.Final/bin` directory.
+. Enter the following command to run the script in interactive mode:
++
+[source]
+----
+ ./runLocally.sh -i
+----
+ +
+. At the `Your choice` prompt, enter `d` to show the download menu.
+COMMENT: I'm confused here. I see this:   0 AfricaAntarcticaAsiaAustralia and OceaniaCentral AmericaEuropeNorth AmericaSouth America    2.0 GB
+Select a region (0-0)
+COMMENT: So it looks like my only choice is 0?
+. Go to a region by entering its ID and then entering `e`.
+COMMENT:How do I know a region's ID? Is there a list?
+. Repeat the previous step until you see a list with the region you want to download.
+. Download a region by entering its ID and then entering `d`.
++
+[WARNING]
+.Using large OSM files
+====
+For the best user experience, use smaller regions such as individual European or US states.
+Using OSM files larger than 1 GB will require significant RAM size and take a lot of time (up to several hours) for the initial processing.
+====
+
+=== Select a region and run OptaWeb Vehicle Routing
+
+.Procedure
+. Run `./runLocally.sh -i`.
+. Select a region from the list of downloaded regions by entering its ID.
+. Confirm the project build if it hasn't been built yet.
+. Confirm starting OptaWeb Vehicle Routing using the selected region.
