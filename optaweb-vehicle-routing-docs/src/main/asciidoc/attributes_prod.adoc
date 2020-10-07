@@ -1,0 +1,6 @@
+
+
+:PLANNER: Business Optimizer
+:VRP: Vechicle Routing Planner
+:VRPVERSIONLONG:7.39.0
+:OPENSHFIT: Red Hat Open Shift Container Platform
