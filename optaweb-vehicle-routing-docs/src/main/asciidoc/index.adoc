@@ -32,7 +32,7 @@ As a developer, you can use the OptaWeb Vehicle Routing starter application to o
 * Apache Maven {VRP-MAVEN-VERSION} or higher is installed. Maven is available from the https://maven.apache.org/[Apache Maven Project] website.
 endif::PRODUCTIZED[]
 
-
+[id="optaweb-con_{context}"]
 == What is OptaWeb Vehicle Routing?
 //We try to avoid empty headings where you have a heading followed directly by a sub-heading so I promoted this section and removed Introduction.
 
@@ -81,6 +81,7 @@ ifdef::COMMUNITY[]
 //[[install-java]]
 //endif::COMMUNITY[]
 
+[id="Java8-proc_{context}"]
 == Install Java 8 or higher
 
 Java SE 8 or higher must be installed on your system before you can use OptaWeb Vehicle Routing.
@@ -106,7 +107,7 @@ sudo dnf install java-1.8.0-openjdk-devel
 
 * To install OpenJDK on other platforms, follow instructions at https://openjdk.java.net/install/.
 
-
+[id="download-vrp-archive-proc_{context}"]
 == Download the distribution archive
 
 To quickly evaluate OptaWeb Vehicle Routing without having to set up build tools, download the OptaWeb Vehicle Routing distribution archive, available from the {PLANNER} website.
@@ -132,6 +133,7 @@ image::distribution.png[Content of the OptaWeb Vehicle Routing distribution arch
 endif::COMMUNITY[]
 
 ifdef::PRODUCTIZED[]
+[id="download-vrp-deployment-files-proc_{context}"]
 == Download and build the OptaWeb Vehicle Routing deployment files
 
 You must download and prepare the deployment files before building and deploying OptaWeb Vehicle Routing.
@@ -156,11 +158,11 @@ mvn clean package -DskipTests
 ----
 
 endif::PRODUCTIZED[]
-
+[id="run-vrp-locally-proc_{context}"]
 == Run OptaWeb Vehicle Routing locally using the runLocally.sh script
 Linux users can use the `runLocally.sh` Bash script to run OptaWeb Vehicle Routing.
 
-NOTE: The `runLocally.sh` script does not run on macOS. If you cannot use the `runLocally.sh` script, see xref:run-vrp-manually-proc_{context}[].
+NOTE: The `runLocally.sh` script does not run on macOS. If you cannot use the `runLocally.sh` script, see xref:configure-vrp-manually-proc_{context}[].
 
 The `runLocally.sh` script automates the following setup steps that otherwise must be carried out manually:
 
@@ -173,11 +175,12 @@ The `runLocally.sh` script automates the following setup steps that otherwise mu
 See the following sections for instructions about executing the `runLocally.sh` script:
 
 
-* xref:run-locally-qs-proc_{context}[]
-* xref:run-locally-interactive-proc_{context}[]
-* xref:run-locally-noninteractive-proc_{context}[]
-* xref:run-locally-airdistance-proc_{context}[]
+* xref:run-vrp-quickstart-proc_{context}[]
+* xref:run-vrp-interactive-proc_{context}[]
+* xref:run-vrp-non-interactive-proc_{context}[]
+* xref:run-vrp-distance-proc_{context}[]
 
+[id="run-vrp-quickstart-proc_{context}"]
 === Run the OptaWeb Vehicle Routing runLocally.sh script in quick start mode
 
 The easiest way to get started with OptaWeb Vehicle Routing is to run the `runLocally.sh` script without any arguments.
@@ -217,6 +220,7 @@ The next time you run the `runlocally.sh` script, load times will be significant
 //.Next steps
 //xref:use-vrp-con_{context}[]
 
+[id="run-vrp-interactive-proc_{context}"]
 === Run the OptaWeb Vehicle Routing runLocally.sh script in interactive mode
 
 Use interactive mode to see the list of downloaded OSM files and country codes assigned to each region.
@@ -272,7 +276,7 @@ http://localhost:8080
 //.Next steps
 //xref:use-vrp-con_{context}[]
 
-
+[id="run-vrp-non-interactive-proc_{context}"]
 === Run the OptaWeb Vehicle Routing runLocally.sh script in non-interactive mode
 
 Use OptaWeb Vehicle Routing in non-interactive mode to start OptaWeb Vehicle Routing with a single command that includes an OSM file that you downloaded previously.
@@ -282,7 +286,7 @@ This is useful when you want to switch between regions quickly or when doing a d
 ifdef::PRODUCTIZED[]
 * OptaWeb Vehicle Routing has been successfully built with Maven as described in xref:download-ref-imp-proc_{context}[].endif::PRODUCTIZED[]
 endif::PRODUCTIZED[]
-* The OSM file for the region that you want to use has been downloaded. For information about downloading OSM files, see xref:run-locally-interactive-proc_{context}[].
+* The OSM file for the region that you want to use has been downloaded. For information about downloading OSM files, see xref:run-vrp-interactive-proc_{context}[].
 * Internet access is available.
 
 
@@ -306,6 +310,7 @@ endif::COMMUNITY[]
 //.Next steps
 //xref:use-vrp-con_{context}[]
 
+[id="run-vrp-distance-proc_{context}"]
 === Run the OptaWeb Vehicle Routing runLocally.sh script in air distance mode
 
 OptaWeb Vehicle Routing can work in air distance mode that calculates travel times based on the distance between two coordinates.
@@ -335,6 +340,7 @@ endif::COMMUNITY[]
 //.Next steps
 //xref:use-vrp-con_{context}[]
 
+[id="update-data-directory-proc_{context}"]
 === Update the data directory
 
 You can update the data directory that OptaWeb Vehicle Routing  uses if you want to use a different data directory. The default data directory is `$HOME/.optaweb-vehicle-routing`.
@@ -352,7 +358,7 @@ For example, if you downloaded an OSM file for Scotland and the script fails to 
 
 * To remove a region, delete the corresponding OSM file from `openstreetmap` directory in the data directory and delete the region's directory in the `graphhopper` directory.
 
-
+[id="configure-vrp-manually-proc_{context}"]
 == Configure and run OptaWeb Vehicle Routing manually
 
 The easiest way to run OptaWeb Vehicle Routing is to use the `runlocally.sh` script. However, if Bash is not available on your system you can manually complete the steps that the `runlocally.sh` script performs.
@@ -454,7 +460,7 @@ http://localhost:8080
 
 //.Next steps
 //xref:use-vrp-con_{context}[]
-
+[id="run-vrp-on-openshift-proc_{context}"]
 == Run OptaWeb Vehicle Routing on {OPENSHIFT}
 
 Linux users can use the `runOnOpenShift.sh` Bash script to install OptaWeb Vehicle Routing on {OPENSHIFT}.
@@ -528,7 +534,7 @@ In the following example, OptaWeb Vehicle Routing downloads the OSM map of Centr
 
 NOTE: For help with the `runOnOpenShift.sh` script, enter `./runOnOpenShift.sh --help`.
 
-
+[id="update-vrp-with-local-changes-proc_{context}"]
 === Updating the deployed OptaWeb Vehicle Routing application with local changes
 
 After you deploy your OptaWeb Vehicle Routing application on {OPENSHIFT}, you can update the back end and front end.
@@ -565,9 +571,8 @@ oc start-build frontend --from-dir=docker --follow
 ----
 
 
-//.Next steps
-//xref:use-vrp-con_{context}[]
 
+[id="using-vrp-con_{context}"]
 == Using OptaWeb Vehicle Routing
 
 In the OptaWeb Vehicle Routing application, you can mark a number of locations on the map.
@@ -584,7 +589,7 @@ The current version has certain limitations:
 For example, a vehicle with a capacity of 10 can visit up to 10 locations before returning to the depot.
 * Setting custom names of vehicles and locations is not supported.
 
-
+[id="creating-route-proc_{context}"]
 === Creating a route
 
 To create an optimal route, use the *Demo* tab of the OptaWeb Vehicle Routing user interface.
@@ -613,6 +618,7 @@ A double click also creates a location.
 Every time you add or remove a location or change the number of vehicles, the application creates and displays a new optimal route.
 If the solution uses several vehicles, the application shows the route for every vehicle in a different color.
 
+[id="setting-vrp-details-proc_{context}"]
 === Viewing and setting other details
 
 You can use other tabs in OptaWeb Vehicle Routing  user interface to view and set additional details.
@@ -627,6 +633,7 @@ You can use other tabs in OptaWeb Vehicle Routing  user interface to view and se
 * Click  the  *Visits* tab to view and remove locations.
 * Click  the *Route* tab to select each vehicle and view the route for the selected vehicle.
 
+[id="vrp-creating-custom-datases-proc_{context}"]
 === Creating custom data sets with OptaWeb Vehicle Routing
 
 There is a built-in demo data set consisting of a several large Belgian cities.
@@ -653,6 +660,7 @@ You can edit the `app.demo.data-set-dir` property to specify a diffent data dire
 
 After you restart the back end, files in the data set directory appear in the *Load demo* menu.
 
+[id="trouble-shooting-vrp-proc_{context}"]
 === Troubleshooting OptaWeb Vehicle Routing
 
 If the OptaWeb Vehicle Routing behaves unexpectedly, follow this procedure to trouble-shoot.
@@ -669,17 +677,17 @@ If the OptaWeb Vehicle Routing behaves unexpectedly, follow this procedure to tr
 .. Restart OptaWeb Vehicle Routing.
 
 
-
+[id="vrp-developement-guide-con_{context}"]
 == OptaWeb Vehicle Routing development guide
-This section describes how to configure and run the back and front end modules in development mode.
+You can configure and run the back and front end modules in development mode.
 
 === OptaWeb Vehicle Routing project structure
 
 The OptaWeb Vehicle Routing project is a multi-module Maven project.
 
 .Module dependency tree diagram
-//image::modules.dot.svg[align="center"]
-image::vrp/modules.dot.svg[align="center"]
+image::modules.dot.svg[align="center"]
+//image::vrp/modules.dot.svg[align="center"]
 
 The back end and front end modules are at the bottom of the module tree. These modules contain the application source code.
 
@@ -727,13 +735,14 @@ endif::PRODUCTIZED[]
 
 The next sections describe how to configure and run the back end in development mode.
 
+[id="running-vrp-backend-proc_{context}"]
 ==== Running the OptaWeb Vehicle Routing back end module using the Spring Boot Maven plugin
 
 You can use the Spring Boot plug-in to run the OptaWeb Vehicle Routing back end module in development mode.
 
 .Prerequisites
 
-* OptaWeb Vehicle Routing has been configured as described in xref:run-vrp-manually-proc_{context}[].
+* OptaWeb Vehicle Routing has been configured as described in xref:configure-vrp-manually-proc_{context}[].
 // TODO application-local.properties
 
 .Procedure
@@ -751,7 +760,7 @@ endif::COMMUNITY[]
 mvn spring-boot:run
 ----
 
-
+[id="running-vrp-backend-intellij-proc_{context}"]
 ==== Running the OptaWeb Vehicle Routing back end module from IntelliJ IDEA
 You can use the IntelliJ IDEA to run the OptaWeb Vehicle Routing back end module to make it easier to develop your project.
 
@@ -778,9 +787,10 @@ This enables you to use the *Update* action to quickly restart the application.
 +
 For more information, see https://blog.jetbrains.com/idea/2018/04/spring-and-spring-boot-in-intellij-idea-2018-1/[_Spring and Spring Boot in IntelliJ IDEA 2018.1_].
 
+[id=spring-boot-auto-restart-con_{context}"]
 ==== Spring Boot automatic restart
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools-restart[Automatic restart]
-is provided by Spring Boot DevTools. When you run the OptaWeb Vehicle Routing back end with the Spring Boot Maven plug-in, the application automatically restarts whenever files on the classpath change.
+Spring Boot automatic restart is provided by Spring Boot DevTools. When you run the OptaWeb Vehicle Routing back end with the Spring Boot Maven plug-in, the application automatically restarts whenever files on the classpath change.
 Automatic restart scans files on the classpath, so you only need to recompile your changes to trigger application restart.
 No IDE configuration is needed.
 
@@ -790,6 +800,7 @@ IntelliJ IDEA saves changes automatically and you need to select either *Build[R
 For more information, see https://www.jetbrains.com/help/idea/compiling-applications.html[Compile and build applications with IntelliJ IDEA].
 [[backend-configuration]]
 
+[id="setting-vrp-backend-properties-proc_{context}"]
 ==== Setting OptaWeb Vehicle Routing back end module configuration properties
 
 There are several ways that you can set OptaWeb Vehicle Routing back end module configuration properties. The methods in this section are useful if you are running OptaWeb Vehicle Routing locally.
@@ -847,11 +858,12 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-featu
 [TIP]
 Use `src/main/resources/application-local.properties` to store your personal configuration without affecting the Git working tree.
 
-For a complete list of OptaWeb Vehicle Routing configuration properties, see xref:backend-properties-ref_{context}[].
+For a complete list of OptaWeb Vehicle Routing configuration properties, see xref:vrp-backend-properties-ref_{context}[].
 
 For a complete list of application properties available in Spring Boot, see the
 https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html[_Common Application Properties_] page on the Spring web site.
 
+[id="vrp-backend-logging-con_{context}"]
 ==== OptaWeb Vehicle Routing backend logging
 
 OptaWeb Vehicle Routing uses the SLF4J API and Logback as the logging framework.
@@ -865,6 +877,7 @@ The following examples are properties that you can use to control logging level 
 * `logging.level.org.optaplanner.core=warn`: Reduces {PLANNER} logging
 * `logging.level.org.springframework.web.socket=trace`: Accesses more details when investigating problems with WebSocket connection
 
+[id="vrp-frontend-proc_{context}"]
 == Working with the OptaWeb Vehicle Routing front end module
 
 ////
@@ -965,8 +978,10 @@ To learn more about the React environment variables, see https://create-react-ap
 mvn install
 ----
 
-
+ifdef::COMMUNITY[]
 [appendix]
+endif::COMMUNITY[]
+[id="backend-architechure-con_{context}"]
 == Back end architecture
 
 Domain model and use cases are essential for the application.
@@ -978,6 +993,7 @@ and are placed at the outermost layer of the architecture.
 image::backend-layers.svg[align="center"]
 //image::vrp/backend-layers.svg[align="center"]
 
+[id="vrp-code-organization-con_{context}"]
 === Code organization
 
 The back end code is organized in three layers, illustrated in the preceding graphic.
@@ -1006,6 +1022,7 @@ The `plugin` package contains the infrastructure layer.
 
 Code in each layer is further organized by function.
 This means that each service or plug-in has its own package.
+
 
 === Dependency rules
 
@@ -1045,7 +1062,11 @@ This is an example of the inversion of control principle.
 
 The `plugin` package contains infrastructure functions such as optimization, persistence, routing, and network.
 
+
+ifdef::COMMUNITY[]
 [appendix]
+endif::COMMUNITY[]
+[id="vrp-backend-properties-ref_{context}"]
 == OptaWeb Vehicle Routing back end configuration properties
 You can set the OptaWeb Vehicle Routing application properties listed in the following table.
 
