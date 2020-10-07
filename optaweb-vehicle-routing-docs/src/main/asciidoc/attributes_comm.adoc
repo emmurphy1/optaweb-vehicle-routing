@@ -1,0 +1,8 @@
+
+
+:PLANNER: OptaPlanner
+:VRP: OptaWeb Vehicle Planning
+:VRPVERSIONLONG: 7.39.0
+:OPENSHIFT: Red Hat Open Shift Container Platform
+:MAVEN_ARTIFACT_VERSION: 7.41.0.Final
+:VRP-DATA-DIR: .optaweb-vehicle-routing
